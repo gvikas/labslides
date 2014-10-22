@@ -581,3 +581,8 @@ aside {
   height: 700px;
   width: 900px;
 }
+
+.img-left img {
+  float: left;
+  padding-right: 30px;
+}
