@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lab Three</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="theme/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide title">
+          <div class="inner">
+            
+            <header><h1>Lab Three</h1></header>
+            
+            
+            <section><p><strong>CS290B</strong><br />
+Bryce Boe<br />
+October 22, 2014</p>
+<p>https://github.com/scalableinternetservices/labslides/blob/master/lab3.md</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Overview</h1></header>
+            
+            
+            <section><ul>
+<li>PivotalTracker</li>
+<li>What is a Sprint?</li>
+<li>What is a Story?</li>
+<li>Sprint Planning</li>
+<li>Initial GitHub Tasks</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>PivotalTracker</h1></header>
+            
+            
+            <section><p><a href="https://www.pivotaltracker.com/">https://www.pivotaltracker.com/</a></p>
+<blockquote>
+<p>Simple, collaborative project management from the experts in agile software
+development.</p>
+</blockquote>
+<ul>
+<li><strong>Everyone</strong>: Create an account</li>
+<li><strong>One team member</strong>:<ul>
+<li>Create a public project</li>
+<li>Invite all other team members (as owners)</li>
+<li>Invite bryce.boe@appfolio.com</li>
+<li>Invite andrew.mutz@appfolio.com</li>
+</ul>
+</li>
+<li><strong>Everyone else</strong>: Accept invite</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Configure Settings (Location)</h1></header>
+            
+            
+            <section><p><img alt="PT settings naviation" src="img/pt_settings_nav.png" /></p>
+<ol>
+<li>Click Hamburger button in upper left of window</li>
+<li>Click on gear in upper right of drawer</li>
+<li>Click "Edit Settings"</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Configure Settings (Options)</h1></header>
+            
+            
+            <section><p><img alt="PT settings" src="img/pt_settings.png" /></p>
+<ul>
+<li><strong>Start Iterations On</strong>: Thursday</li>
+<li><strong>Project Start Date</strong>: 10/23/2014</li>
+<li><strong>Project Time Zone</strong>: (GMT-01:00) Cape Verde Is.</li>
+<li><strong>Point Scale</strong>: Powers of 2</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide img-left">
+          <div class="inner">
+            
+            <header><h1>PivotalTracker and GitHub Integration</h1></header>
+            
+            
+            <section><p><img alt="PT integration with GH" src="img/pt_integration_gh.png" /></p>
+<p>With integration enabled, commit messages containing <em>[#PTStoryID]</em> will
+automatically add activity to a PT story.</p>
+<h2>Examples</h2>
+<h3>Add Activity</h3>
+<pre><code>[#81211046] Generated Submission scaffold.
+</code></pre>
+<h3><em>Finish</em> a Story</h3>
+<pre><code>[Fix #81211046] Added validation to submissions.
+</code></pre>
+<h3>See also:</h3>
+<p><a href="https://www.pivotaltracker.com/help/api?version=v3#scm_post_commit">PT Help:
+SCM_POST_COMMIT</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What is a Sprint?</h1></header>
+            
+            
+            <section><p>A sprint is a one week period of <em>work</em> beginning each Wednesday at 6PM.</p>
+<ul>
+<li><strong>ALL</strong>: Starts with <em>sprint planning</em> (will occur during lab)<ul>
+<li>Create, describe, and estimate the <em>stories</em> that need to be completed</li>
+<li>Prioritize stories by importance</li>
+</ul>
+</li>
+<li><strong>PAIR/INDIVIDUAL</strong>: Work on and complete stories based on priority
+  throughout the week<ul>
+<li>(Individually) Do not start more than one story at a time</li>
+<li>(Suggested) Have another teammate <em>code review</em> and test work before
+  merging into master</li>
+</ul>
+</li>
+<li><strong>ALL</strong>: Ends with a <em>sprint review</em> and <em>sprint retrospective</em> (will occur during lab)<ul>
+<li>Report sprint's progress to Andrew and Bryce</li>
+<li>Discuss issues, if any, from the sprint and make resolutions</li>
+<li>Suggest and take action on methods for improving sprint productivity</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Sprint/Development Hints</h1></header>
+            
+            
+            <section><ul>
+<li>Additional sprint planning may be needed throughout a sprint. This involves
+  the entire team.</li>
+<li>Code should be worked on in a branch and only merged into the master branch
+  once it has been (1) code reviewed, and (2) tested by another teammate.<ul>
+<li>Code reviews can be done through GitHub's interface</li>
+<li>Code review and teammate testing is less necessary when a story is
+  completed through pairing</li>
+</ul>
+</li>
+<li>Synchronize with <em>all</em> teammates if you need to deviate from the plan.</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What is a story?</h1></header>
+            
+            
+            <section><p>A story describes new or changed functionality to your web service from the
+point of view of a user of your web service.</p>
+<blockquote>
+<p>As a [USER ROLE], I want [SOME GOAL] so that [SOME REASON].</p>
+</blockquote>
+<h2>Examples</h2>
+<blockquote>
+<p>As a logged in user, I want to have a list of all the comments I've made in
+  order to quickly scan over my comment contributions.</p>
+<p>As an unauthenticated user, I should not be able to create a community.</p>
+</blockquote>
+<p><a href="http://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template">External
+Reference</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Stories on PivotalTracker</h1></header>
+            
+            
+            <section><h2>Feature</h2>
+<ul>
+<li>User-facing issues that represent new functionality or changes to the web
+  application</li>
+<li>Often written as <em>user stories</em>, i.e., in terms of what the user wants to
+  do/see/accomplish</li>
+<li>Estimate the amount of work required to complete</li>
+</ul>
+<h2>Bug</h2>
+<ul>
+<li>Categorizes unwanted functionality that affects (or may affect) users</li>
+<li>Describes steps needed to reproduce</li>
+</ul>
+<h2>Chore</h2>
+<ul>
+<li>Non-user facing changes that are not critical</li>
+<li>E.g., code refactoring, database clean-up</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Story Categorization</h1></header>
+            
+            
+            <section><h2>Current</h2>
+<ul>
+<li>Stories that are included in the current sprint (limited by velocity)</li>
+<li>Stories should be organized by priority, and <em>started</em> in priority order</li>
+<li>Includes completed stories for the current sprint</li>
+</ul>
+<h2>Backlog</h2>
+<ul>
+<li>Location for stories that have been <em>groomed</em>, i.e., discussed with the
+  group, described, and estimated</li>
+<li>Stories should only be started out the backlog in cases where <em>current</em> has
+  no remaining stories to complete<ul>
+<li>In this case, they should also be started in priority order</li>
+</ul>
+</li>
+</ul>
+<h2>Icebox</h2>
+<ul>
+<li>Location to put stories that the team has not yet <em>groomed</em><ul>
+<li>These stories may be groomed and incorporated into future sprints</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Initial PiviotalTracker Tasks</h1></header>
+            
+            
+            <section><ul>
+<li>Add a chore: "Create initial rails application"</li>
+<li>Add a chore: "Add README.md with team name, project description, and pivotal
+  tracker link"</li>
+<li><strong>For each team member</strong>:<ul>
+<li>Add a chore: "Add name and photo for team member in the README.md file."</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Sprint Planning</h1></header>
+            
+            
+            <section><p>Spend approximately 30 minutes as a team to create and describe an initial set
+of stories for your web application.</p>
+<ul>
+<li>Only one person should be at a computer entering the stories into PT</li>
+<li>Get a rough idea for what is needed first</li>
+<li>Detail exactly what is needed to <em>accept</em> a story</li>
+<li>Estimate the <em>work</em> required for each story<ul>
+<li>A 2-point estimation should require approximately twice as much effort as
+  a 1-point story, and half as much effort as a 4-point story.</li>
+</ul>
+</li>
+<li>Prioritize the stories, and add to PivotalTracker<ul>
+<li>Initially, only 10 points will be added to <strong>current</strong>, the remainder
+  should be prioritized in the <strong>backlog</strong></li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lab3.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Initial GitHub Tasks</h1></header>
+            
+            
+            <section><ul>
+<li><strong>One team member</strong>:<ul>
+<li>Initialize your git repository with your rails application.</li>
+<li>Remove <code>README.rst</code> and add our
+  <a href="https://raw.githubusercontent.com/scalableinternetservices/labapp/master/README.md">README.md</a><ul>
+<li>Update the <em>project name</em>, <em>team name</em>, <em>project description</em>, and
+  <em>pivotal tracker link</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Everyone else</strong>:<ul>
+<li>Clone the repository (once it has been added)</li>
+<li>Add your name, GitHub link, and photo link to the README<ul>
+<li><strong>This is an exercise in conflict resolution</strong></li>
+</ul>
+</li>
+<li>(Optional) Add any other fun content to the README</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lab3.md">lab3.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Lab Three</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Overview</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">PivotalTracker</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Configure Settings (Location)</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Configure Settings (Options)</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">PivotalTracker and GitHub Integration</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">What is a Sprint?</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Sprint/Development Hints</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">What is a story?</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Stories on PivotalTracker</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Story Categorization</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Initial PiviotalTracker Tasks</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Sprint Planning</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Initial GitHub Tasks</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
