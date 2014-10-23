@@ -9,4 +9,4 @@ If `pip` is available landslide can be installed via:
 
 Once installed, an HTML presentation can be generated via:
 
-    landslide -i labX.md
+    landslide -rl table labX.md

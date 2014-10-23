@@ -586,3 +586,7 @@ aside {
   float: left;
   padding-right: 30px;
 }
+
+table pre {
+  margin: 0px;
+}
