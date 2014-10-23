@@ -12,7 +12,7 @@ https://github.com/scalableinternetservices/labslides/blob/master/devise.md
 
 See: [https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
 
-Create branch to add authentication
+Create branch to add authentication (__Start Story Procedure__)
 
     !sh
     # Ensure on master and up-to-date (git checkout master, git pull)
@@ -110,7 +110,7 @@ Execute:
 ---
 # Commit and Make Pull Request
 
-Execute:
+Execute (First part of __Finish Story Procedure__):
 
     !sh
     git status
@@ -128,6 +128,8 @@ Create a pull request from your repo's branch list (the _Deliver_ on PT):
 ---
 # Code Review, Test and Merge
 
+(Final part of __Finish Story Procedure__)
+
 * Requester should send a teammate the link the the PR on GitHub
 * Teammate should make comments for any issues, or questions they have on the
   branch
@@ -139,3 +141,38 @@ Create a pull request from your repo's branch list (the _Deliver_ on PT):
   _master_ and fix any merge conflicts
   * May require an additional round of testing to ensure merge did not break
     any existing functionalty (you've been writing tests all along, right?)
+
+---
+# Enforce Authentication for Comments
+
+__Goal__: Unauthenticated users are redirected to the login page when
+attempting to create or edit a comment.
+
+Follow the __Start Story Procedure__
+
+Add to __CommentsController__: __app/controllers/comments_controller.rb__
+
+    !ruby
+    before_action :authenticate_user!, only: [:create, :edit, :new, :update]
+
+__Note__: If you have Comment Controller tests, they will likely break due to
+requiring authenicated users to perform the action. I will provide an example
+to fix this later.
+
+Follow the __Finish Story Procedure__
+
+---
+# Associate Comments with Users
+
+__Goal__: Displayed comments should output the name of the user who created the
+comment.
+
+Follow the __Start Story Procedure__
+
+Create and run the migration:
+
+    rails g migration AddUserToComments user:references
+    # Inspect the migration code, then apply
+    rake db:migrate
+
+## Remaining instructions will be added after class.
