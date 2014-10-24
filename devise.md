@@ -3,7 +3,7 @@
 
 __CS290B__  
 Bryce Boe  
-October 22, 2014
+October 23, 2014
 
 https://github.com/scalableinternetservices/labslides/blob/master/devise.md
 
@@ -155,9 +155,18 @@ Add to __CommentsController__: __app/controllers/comments_controller.rb__
     !ruby
     before_action :authenticate_user!, only: [:create, :edit, :new, :update]
 
-__Note__: If you have Comment Controller tests, they will likely break due to
-requiring authenicated users to perform the action. I will provide an example
-to fix this later.
+## Fix CommentsControllerTest __test/controllers/comments_controller_test.rb__
+
+Add the following line to tests for _create_, _edit_, _new_, and _update:
+
+    !ruby
+    sign_in users(:one)
+
+Add a _user_ relationship for each fixture in __test/fixtures/comments.yml__:
+
+    !yaml
+    ...
+    user: one
 
 Follow the __Finish Story Procedure__
 
@@ -171,8 +180,39 @@ Follow the __Start Story Procedure__
 
 Create and run the migration:
 
+    !sh
     rails g migration AddUserToComments user:references
     # Inspect the migration code, then apply
     rake db:migrate
 
-## Remaining instructions will be added after class.
+Associate comments with a user and enforce that new/updated comments have a
+user (edit: __app/models/comment.rb__)
+
+    !ruby
+    belongs_to :user
+    validates :user, presence: true
+
+---
+# Comments + Users continued
+
+## Associate the session user when creating a new comment
+
+Edit __app/controllers/comments_controller.rb__:
+
+    !ruby
+    before_action :authenticate_user!, only: [:create, :edit, :new, :update]
+    ...
+    def create
+      @comment = Comment.new(comment_params)
+      @comment.user = current_user
+
+## Show comment _authors_ next to comment messages
+
+Update: __app/views/comments_comment.html.erb__
+
+    !erb
+    <div>(<%= comment.user.email if comment.user %>) <%= comment.message %></div>
+
+
+
+Follow the __Finish Story Procedure__
